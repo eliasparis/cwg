@@ -1,6 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/ts/app.ts',
@@ -34,7 +33,8 @@ module.exports = {
   devServer: {
     hot: true, 
     contentBase: path.resolve(__dirname, 'dist'),
-    publicPath: '/tmp/'
+    publicPath: '/tmp/',
+    watchContentBase: true
   },
   devtool: 'inline-source-map'
 };

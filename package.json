@@ -6,7 +6,7 @@
   "scripts": {
     "test": "",
     "prebuild": "babel-node builder_scripts/prebuild",
-    "start": "npm run prebuild && webpack-dev-server --env development",
+    "start": "npm run prebuild | webpack-dev-server --env development",
     "build": "webpack --env.target production"
   },
   "author": "eliasparis",
