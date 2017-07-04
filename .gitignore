@@ -1,0 +1,6 @@
+.DS_Store
+*.txt
+*.docx
+node_modules/
+build/
+dist/
