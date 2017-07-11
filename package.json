@@ -7,7 +7,7 @@
     "test": "",
     "prebuild": "babel-node builder_scripts/prebuild",
     "start": "npm run prebuild --dev | webpack-dev-server --env development",
-    "build": "webpack --env.target production"
+    "build": "npm run prebuild --pro && webpack --env production --progress --colors"
   },
   "author": "eliasparis",
   "license": "MIT",
