@@ -4,3 +4,6 @@ class ClassName {
 		const a = 'aaaa';
 	}
 }
+
+console.log('aaaaa');
+console.log('aaaaa');

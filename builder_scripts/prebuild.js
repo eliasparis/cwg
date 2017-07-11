@@ -1,12 +1,13 @@
 import fs from "fs";
 import ejs from "ejs";
+import process from "process";
+
+const isDev = process.argv.includes("dev", 2);
 
 function builder(){
 
 	const pages = fs.readdirSync('./src/pages', {encoding: 'utf8'});
-	
 	const includes = pages.map( (file) => `<%- include('pages/${file}'); %>`).join('');
-	
 	const index = 
 		fs
 			.readFileSync('./src/index.html', {encoding: 'utf8'})
@@ -26,11 +27,18 @@ function builder(){
 					index, {filename: './src/index.html'}
 				)
 		);
+
+	process.emitWarning('Templates compiled');
 };
 
-fs.watch(
-	'./src/pages', 
-	(evtype) => builder() 
-)
+if ( isDev ) {
+	fs.watch(
+		'./src/pages', 
+		(evtype) => builder() 
+	)
+}else{
+	// Aquí instertar estilos y scripts
+}
+
 
 builder();

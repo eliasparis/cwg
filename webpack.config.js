@@ -33,8 +33,7 @@ module.exports = {
   devServer: {
     hot: true, 
     contentBase: path.resolve(__dirname, 'dist'),
-    publicPath: '/tmp/',
-    watchContentBase: true
+    publicPath: '/tmp/'
   },
   devtool: 'inline-source-map'
 };
