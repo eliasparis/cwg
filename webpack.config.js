@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var posProdPlugin = require('./builder_scripts/productionplugin.js');
 
 module.exports = function(env){
 
@@ -37,7 +38,8 @@ module.exports = function(env){
       ] : [
         new webpack.DefinePlugin({
           'process.env.NODE_ENV': env
-        })
+        }),
+        new posProdPlugin()
       ],
     devServer: {
       hot: true, 

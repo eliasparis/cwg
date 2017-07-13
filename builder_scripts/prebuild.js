@@ -36,9 +36,6 @@ if ( isDev ) {
 		'./src/pages', 
 		(evtype) => builder() 
 	)
-}else{
-	// Aquí instertar estilos y scripts
 }
-
 
 builder();
