@@ -1,9 +1,21 @@
-class ClassName {
+import PageComponent from './pages/page-component';
+
+class App {
 	
 	constructor() {
-		const a = 'aaaa';
+		this.pages();
+		this.components();
+	}
+
+	pages() : void{
+		new PageComponent('AAAAAAA');
+	}
+
+	components() : void{
+		//new NavBar();
+		//new Carousel();
 	}
 }
 
-console.log('aaaaa');
-console.log('aaaaa');
+new App();
+
