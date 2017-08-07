@@ -1,3 +1,7 @@
+////// Styles import fix
+declare var require: any;
+let styles = require('./../css/main.css');
+
 import PageComponent from './pages/page-component';
 
 class App {

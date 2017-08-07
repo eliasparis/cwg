@@ -1,0 +1,37 @@
+<section id="enroll" class="">
+    <h3 class="gl">REXÍSTRATE</h3>
+    <p class="gl"> As preinscricións pódense facer ata o Venres antes de cada proba ou de anteman para o circuito completo tendo prioridade no caso de chegar a cubrir o cupo máximo de participantes por proba.
+        <br>A inscrición por cada modalidade é de <b>20€ Non federados e 15€ os federados.</b> O prezo para a inscrición ao circuito completo é de <b>40€ Non federados e 30€ os federados</b> por cada modalidade.</p>
+    <h3 class="es">INSCRÍBETE</h3>
+    <p class="es"> Las preinscripciones se pueden hacer hasta el Viernes antes de cada prueba, o previamente para todo el circuito teniendo prioridad en caso de llegar a cubrir el cupo maximo de participantes de cada prueba.
+        <br>La inscripción por cada modalidad son de <b>20€ No federados y 15€ federados.</b> El precio para la inscripción al circuito completo es de <b>40€ No federados y 30€ federados</b> por cada modalidad.</p>
+    <form id="enrollForm">
+        <input class="enrollform" type="text" name="nombre" placeholder="Nome e apelidos" required>
+        <input class="enrollform" type="number" name="tlf" placeholder="Teléfono" required>
+        <input class="enrollform" type="email" name="email" placeholder="Email" required>
+        <div>
+            <h5>Modalidade: </h5>
+            <input type="radio" value="wave" id="waveradio" name="modal" checked>
+            <label for="waveradio">Wave</label>
+            <input type="radio" value="salom" id="slalomradio" name="modal">
+            <label for="slalomradio">Slalom</label>
+        </div>
+        <div class="event-type-form">
+            <input type="radio" value="todo el circuito" id="circuitoradio" name="grupo" checked>
+            <label for="circuitoradio">Circuito completo</label>
+        </div>
+        <div class="event-type-form">
+            <input type="radio" value="ferrol" id="ferrolradio" name="grupo">
+            <label for="ferrolradio">Ferrol</label>
+            <input type="radio" value="furnas" id="furnasradio" name="grupo">
+            <label for="furnasradio">O Castro / Furnas</label>
+            <input type="radio" value="a lanzada" id="lanzadaradio" name="grupo">
+            <label for="lanzadaradio">A Lanzada</label>
+            <input type="radio" value="secret" id="secret radio" name="grupo">
+            <label for="secret radio">Secret Spot</label>
+        </div>
+        <h6><input type="checkbox" required value="true" id=lopd name="lopd"><label for="lopd">Acepto os   <a href="lopd.html" target="_blank" style="text-decoration: underline;"> términos e condicións de uso</a></label></h6>
+        <button type="submit" id="formButton">Enviar</button>
+    </form>
+    <p id="formComments"></p>
+</section>

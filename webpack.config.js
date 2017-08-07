@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var posProdPlugin = require('./builder_scripts/productionplugin.js');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = function(env){
 
@@ -11,7 +12,7 @@ module.exports = function(env){
     output: {
       filename: 'bundle.js',
       path: path.resolve(__dirname, 'dist/tmp/'),
-      publicPath: './dist/tmp/'
+      publicPath: './tmp/'
     },
     resolve: {
       extensions: [".ts", ".tsx", ".js"]
@@ -19,11 +20,14 @@ module.exports = function(env){
     module: {
     	rules: [
     		{
-    			test: '/\.css$/',
-    			use: [
+    			test: /\.css$/,
+    			use: isDev ? [
     				'style-loader',
     				'css-loader'
-    			]
+    			] : ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: "css-loader"
+          })
     		},
     		{
          test: /\.ts?$/,
@@ -39,6 +43,8 @@ module.exports = function(env){
         new webpack.DefinePlugin({
           'process.env.NODE_ENV': env
         }),
+        new webpack.optimize.UglifyJsPlugin(),
+        new ExtractTextPlugin('../css/[name].css'),
         new posProdPlugin()
       ],
     devServer: {

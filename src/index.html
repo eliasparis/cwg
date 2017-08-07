@@ -4,18 +4,25 @@
     <meta charset="UTF-8">
     <title>CWG | Circuito de Windsurf Galego</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Sitio oficial do CWG, Circuito de Windsurf Galego" />
+    <meta name="description" content="Sitio oficial do CWG, Circuito de Windsurf Galego 2017." />
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/png" href="public/favicon/fav16x16.png" sizes="16x16">  
     <link rel="icon" type="image/png" href="public/favicon/fav32x32.png" sizes="32x32">  
     <link rel="icon" type="image/png" href="public/favicon/fav96x96.png" sizes="96x96"> 
     <link rel="canonical" href="http://www.cwgal.com">
-    <style></style>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <nav>###</nav>
-    <menu></menu>
-    <main></main>
+    <aside>
+        <menu></menu>
+    </aside>
+    <div id="carousel-container">
+        <%- include('ts/components/carousel/carousel.template.ejs'); %>
+    </div>
+    <div id="main-content">
+        <menu></menu>
+        ###
+    </div>
 	<script src="tmp/bundle.js">//SCRIPT</script>
 </body>
 </html>
