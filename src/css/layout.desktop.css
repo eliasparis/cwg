@@ -1,0 +1,53 @@
+@media (orientation : landscape)  {
+
+	/** When css-grid is suported **/
+	@supports (display: -webkit-grid) or
+	          (display: -moz-grid) or
+	          (display: grid) {
+			
+		
+	}
+	
+	body{
+		text-align: inherit;
+		overflow-y: hidden;
+	}
+	
+	#lateral-wrapper-d{
+    height: 100vh;
+    width: 35vw;
+    overflow: hidden!important;
+    position: fixed;
+	}
+
+	aside{
+		display: inline-block;
+    position: relative;
+    width: 35vw;
+    height: 50vh;
+	}
+
+	div#carousel-container{
+		height: 50vh;
+		width: 35vw;
+		border-right: 1px solid #DCDBDB;
+		border-top: 1px solid #DCDBDB;
+		float: none;
+	}
+
+	div#main-content{
+		margin-left: 35vw;
+		width: 65vw;
+		border: 0;
+		vertical-align: top;
+		overflow: auto;
+		height: 100%;
+		padding: 10em 5em 2em 3em;
+	}
+}
+
+@media (min-width: 80em) {
+	div#main-content > section{
+		width: 80%;
+	}	
+}

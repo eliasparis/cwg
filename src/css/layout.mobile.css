@@ -1,0 +1,64 @@
+/** When css-grid is suported */
+@supports (display:-webkit-grid) or
+(display:-moz-grid) or
+((display: -ms-grid) or (display: grid)) {
+}
+
+/** Whitout css-grid  */
+aside {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	width: 2.2em;
+	background-color: white;
+	border-right: 1px solid #DCDBDB;
+}
+
+div#carousel-container {
+	background-color: #111835;
+	float: right;
+}
+
+div#main-content {
+	border-top: 1px solid #DCDBDB;
+	padding: 2.8em 2em 2em 1.4em;
+}
+
+div#main-content > section{
+	display: none;
+}
+
+.calc-width-m {
+	width: -webkit-calc(100vw - 2.2em);
+	width: -moz-calc(100vw - 2.2em);
+	width: -ms-calc(100vw - 2.2em);
+	width: -o-calc(100vw - 2.2em);
+	width: calc(100vw - 2.2em);
+	display: inline-block;
+}
+
+@media (orientation: portrait) and (min-width: 40em){
+	div#main-content{
+		padding: 4em 3.5em 3em 2.3em;
+	}
+}
+
+@media (orientation: portrait) and (min-width: 60em) {
+	aside{
+		width: 3em;
+	}
+
+	.calc-width-m {
+		width: -webkit-calc(100vw - 3em);
+		width: -moz-calc(100vw - 3em);
+		width: -ms-calc(100vw - 3em);
+		width: -o-calc(100vw - 3em);
+		width: calc(100vw - 3em);
+	}
+
+	div#main-content{
+		padding: 4em 3.5em 3em 2.3em;
+	}
+}

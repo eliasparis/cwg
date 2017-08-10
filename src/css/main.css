@@ -1,7 +1,4 @@
 @import "common.css";
+@import "layout.css";
+@import "pages.css";
 @import "../ts/components/components.css";
-
-body{
-	background-color: red;
-	color: blue;
-}

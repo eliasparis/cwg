@@ -13,13 +13,14 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <aside>
-        <menu></menu>
-    </aside>
-    <div id="carousel-container">
-        <%- include('ts/components/carousel/carousel.template.ejs'); %>
-    </div>
-    <div id="main-content">
+    <div id="lateral-wrapper-d">
+        <aside>
+            <menu></menu>
+        </aside>
+        <div id="carousel-container" class="calc-width-m">
+            <%- include('ts/components/carousel/carousel.template.ejs'); %>
+        </div>    
+    </div><div id="main-content" class="calc-width-m">
         <menu></menu>
         ###
     </div>
