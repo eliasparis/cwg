@@ -1,10 +1,12 @@
 ////// Styles import fix
 declare var require: any;
 let styles = require('./../css/main.css');
+////////////////////////
 
 import PageComponent from './pages/page-component';
+import NavBar from './components/nav-bar/nav-bar.component';
 
-class App {
+new class App {
 	
 	constructor() {
 		this.pages();
@@ -16,10 +18,8 @@ class App {
 	}
 
 	components() : void{
-		//new NavBar();
+		var a = new NavBar();
+		console.log(a);
 		//new Carousel();
 	}
-}
-
-new App();
-
+}();

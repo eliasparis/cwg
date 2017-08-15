@@ -5,6 +5,6 @@ export default class PageComponent {
 
 	constructor( selector : string ){
 		this.selector = selector;
-		this.element = document.getElementById(`#${selector}`);
+		this.element = document.getElementById(selector);
 	}
 } 
