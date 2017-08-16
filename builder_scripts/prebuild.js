@@ -2,7 +2,7 @@ import fs from "fs";
 import ejs from "ejs";
 import process from "process";
 
-const isDev = process.argv.includes("dev", 2);
+const isDev = process.argv.includes("dev");
 
 function builder(){
 
@@ -40,6 +40,10 @@ function builder(){
 if ( isDev ) {
 	fs.watch(
 		'./src/pages', 
+		(evtype) => builder() 
+	)
+	fs.watch(
+		'./src/ts/components', 
 		(evtype) => builder() 
 	)
 }

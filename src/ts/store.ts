@@ -1,7 +1,10 @@
 import { createStore } from 'redux';
+declare var require: any;
+var initSubscriber = require('redux-subscriber');
 import reducer from './reducers/'
 
 const store = createStore(reducer);
+const subscribe = initSubscriber.default(store);
 
 export default store;
 
