@@ -1,7 +1,6 @@
 import {Component, ComponentClass} from "../../component.ts";
 import Store from "../../../store.ts";
-declare var require: any;
-var subscribe = require('redux-subscriber');
+import {subscribe} from "redux-subscriber";
 
 export default class NavBarLink extends ComponentClass implements Component {
 	
@@ -16,7 +15,10 @@ export default class NavBarLink extends ComponentClass implements Component {
 	}
 
 	toggleElement(){
-		if (this.element.id === `nav-bar-link-${Store.getState().pages.currentPageHash}` ){
+
+		let state : any = Store.getState();
+
+		if (this.element.id === `nav-bar-link-${state.pages.currentPageHash}` ){
 			this.element.classList.add('active');
 		}else{
 			this.element.classList.remove('active');
@@ -24,9 +26,7 @@ export default class NavBarLink extends ComponentClass implements Component {
 	}
 
 	addEvents(){
-		console.log(subscribe)
-		subscribe.subscribe(this.storeProperty, (state : any) => {
-			console.log(state);
+		subscribe(this.storeProperty, (state : any) => {
 			this.toggleElement();
 		})
 	}

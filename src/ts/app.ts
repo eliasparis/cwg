@@ -26,11 +26,16 @@ new class App {
 	}
 
 	mainListeners(){
+		
 		window.onhashchange = () => {
 			Store
 				.dispatch(
 					changeHash(document.location.hash.replace('#', ''))
 				)
 		};
+
+		if(document.location.hash === ''){ 
+			document.location.hash = '#intro';
+		} 
 	}
 }();
