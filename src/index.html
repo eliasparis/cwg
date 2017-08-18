@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" href="public/favicon/fav96x96.png" sizes="96x96"> 
     <link rel="canonical" href="http://www.cwgal.com">
     <link rel="stylesheet" href="css/main.css">
+    <script>window.CWGpages = JSON.parse('<%- JSON.stringify(pages) %>');</script>
 </head>
 <body>
     <div id="lateral-wrapper-d">
@@ -27,6 +28,9 @@
         <!-- Content includes reference -->
         ###
         <!-- END Content includes reference -->
+        <div id="errorPage" class="hidden">
+            Error
+        </div>
     </div>
 	<script src="tmp/bundle.js">//SCRIPT</script>
 </body>

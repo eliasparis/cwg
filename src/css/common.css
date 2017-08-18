@@ -13,7 +13,7 @@ html, body{
 
 body{
 	position: relative;
-	background-color: #eaeaea;
+	background-color: #eeeeee;
 	text-align: right;
 	overflow-x: hidden; 
 }
@@ -24,4 +24,12 @@ body > *{
 
 section{
 	color: #111835;
+}
+
+.active{
+	display: block;
+}
+
+.hidden{
+	display: none;
 }

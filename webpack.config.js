@@ -1,6 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
-var posProdPlugin = require('./builder_scripts/productionplugin.js');
+var PosProdPlugin = require('./builder_scripts/productionplugin.js');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = function(env){
@@ -45,7 +45,7 @@ module.exports = function(env){
         }),
         new webpack.optimize.UglifyJsPlugin(),
         new ExtractTextPlugin('../css/[name].css'),
-        new posProdPlugin()
+        new PosProdPlugin()
       ],
     devServer: {
       hot: true, 

@@ -5,4 +5,8 @@ function changeHash(hash: string) {
 	}
 }
 
-export { changeHash };
+function errorHash() {
+  return { type: 'ERROR_HASH' }
+}
+
+export { changeHash, errorHash };

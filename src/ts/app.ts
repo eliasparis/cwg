@@ -3,10 +3,11 @@ declare var require: any;
 let styles = require('./../css/main.css');
 ////////////////////////
 
+declare const CWGpages : string[];
 import Store from './store.ts';
 import PageComponent from './pages/page-component';
 import NavBar from './components/nav-bar/nav-bar.component';
-import { changeHash } from './actions/page-actions';
+import { changeHash, errorHash } from './actions/page-actions';
 
 
 new class App {
@@ -18,7 +19,7 @@ new class App {
 	}
 
 	pages() : void{
-		new PageComponent('AAAAAAA');
+		CWGpages.forEach(page => new PageComponent(page));
 	}
 
 	components() : void{
@@ -28,10 +29,20 @@ new class App {
 	mainListeners(){
 		
 		window.onhashchange = () => {
-			Store
-				.dispatch(
-					changeHash(document.location.hash.replace('#', ''))
-				)
+
+			let hash : string = document.location.hash.replace('#', '');
+
+			if (hash === 'error') {
+				return false;
+			}
+
+			if ( !CWGpages.includes(hash)) {
+				Store.dispatch( errorHash() );
+				document.location.hash = '#error';
+				return false;
+			}
+
+			Store.dispatch( changeHash( hash ) );
 		};
 
 		if(document.location.hash === ''){ 
