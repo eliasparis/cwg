@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "ejs": "^2.5.6",
+    "object-path": "^0.11.4",
     "redux": "^3.7.1",
     "redux-subscriber": "^1.1.0"
   }

@@ -1,14 +1,17 @@
+import Store from "../store.ts";
+
 class ComponentClass {
 	
 	element: HTMLElement;
 	children: Component[] = [];
+	initialStoreValue: any = Store.getState(); 
 
 	constructor(selector: string){
 		this.element = document.getElementById(selector);
 	}
 
-	render() : void {
-		console.log('render')
+	render(template: string) : void {
+
 	}
 }
 

@@ -10,24 +10,21 @@ export default class NavBarLink extends ComponentClass implements Component {
 
 	constructor(selector: string) {
 		super(selector);
-		this.toggleElement();
+		this.toggleElement(this.initialStoreValue.pages.currentPageHash);
 		this.addEvents();
 	}
 
-	toggleElement(){
-
-		let state : any = Store.getState();
-
-		if (this.element.id === `nav-bar-link-${state.pages.currentPageHash}` ){
+	toggleElement(hash : string){
+		if (this.element.id === `nav-bar-link-${hash}` ){
 			this.element.classList.add('active');
 		}else{
 			this.element.classList.remove('active');
-		};
+		}
 	}
 
 	addEvents(){
 		subscribe(this.storeProperty, (state : any) => {
-			this.toggleElement();
+			this.toggleElement(state.pages.currentPageHash);
 		})
 	}
 }

@@ -1,3 +1,5 @@
 <div id="carousel">
-	<%- pages %>
+	<% pages.forEach(function(page){ %>
+	<div class="carousel-slide" id="c-slide-<%= page %>"></div>
+	<% }) %>
 </div>

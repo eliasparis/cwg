@@ -7,7 +7,9 @@ declare const CWGpages : string[];
 import Store from './store.ts';
 import PageComponent from './pages/page-component';
 import NavBar from './components/nav-bar/nav-bar.component';
-import { changeHash, errorHash } from './actions/page-actions';
+import ErrorPage from './components/error-page/error-page.component';
+import Carousel from './components/carousel/carousel.component';
+import { changeHash, errorHash, validHash } from './actions/page-actions';
 
 
 new class App {
@@ -20,10 +22,12 @@ new class App {
 
 	pages() : void{
 		CWGpages.forEach(page => new PageComponent(page));
+		new ErrorPage();
 	}
 
 	components() : void{
 		new NavBar();
+		new Carousel();
 	}
 
 	mainListeners(){
@@ -32,14 +36,10 @@ new class App {
 
 			let hash : string = document.location.hash.replace('#', '');
 
-			if (hash === 'error') {
-				return false;
-			}
-
 			if ( !CWGpages.includes(hash)) {
 				Store.dispatch( errorHash() );
-				document.location.hash = '#error';
-				return false;
+			}else{
+				Store.dispatch( validHash() )
 			}
 
 			Store.dispatch( changeHash( hash ) );

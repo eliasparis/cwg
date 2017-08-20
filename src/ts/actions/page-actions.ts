@@ -9,4 +9,8 @@ function errorHash() {
   return { type: 'ERROR_HASH' }
 }
 
-export { changeHash, errorHash };
+function validHash() {
+  return { type: 'VALID_HASH' }
+}
+
+export { changeHash, errorHash, validHash };
