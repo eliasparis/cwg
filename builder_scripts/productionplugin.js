@@ -29,13 +29,6 @@ module.exports = class CustomPro{
 					mutatedData 
 				);
 
-			// Object
-			// 	.keys(compilation.assets)
-			// 	.forEach(
-			// 		(asset) => fs.unlinkSync( compilation.assets[asset].existsAt )
-			// 	);
-
-			//fs.rmdirSync('./dist/tmp');
 
 			callback();
 			

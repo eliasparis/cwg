@@ -1,11 +1,10 @@
 import {Component, ComponentClass} from "../component.ts";
-import {subscribe} from "redux-subscriber";
+import CarouselSlide from './carousel-slide/carousel-slide.component';
 
 export default class Carousel extends ComponentClass implements Component {
 	
 	renderable: boolean = false;
 	storeProperty: string = "pages.currentPageHash";
-	storePropertyError : string = "pages.errorHash"
 	selector: string;
 
 	constructor(selector: string = "carousel") {
