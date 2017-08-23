@@ -46,6 +46,7 @@ export default class CarouselSlide extends ComponentClass implements Component {
 
 	lazyLoadPicture(){
 		//code
+		//this.element.classList.add('loaded');
 		this.loaded = true;
 	}
 }

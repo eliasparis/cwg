@@ -9,6 +9,7 @@ import PageComponent from './pages/page-component';
 import NavBar from './components/nav-bar/nav-bar.component';
 import ErrorPage from './components/error-page/error-page.component';
 import Carousel from './components/carousel/carousel.component';
+import Aside from './components/aside/aside.component';
 import { changeHash, errorHash, validHash } from './actions/page-actions';
 
 
@@ -28,6 +29,7 @@ new class App {
 	components() : void{
 		new NavBar();
 		new Carousel();
+		new Aside();
 	}
 
 	mainListeners(){
