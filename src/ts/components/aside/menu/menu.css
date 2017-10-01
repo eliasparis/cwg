@@ -1,3 +1,7 @@
-aside menu #menu-nav{
-	display: block;
+aside menu #menu-nav {
+    display: block;
+}
+
+aside #menu svg .cross-line {
+    display: none;
 }
