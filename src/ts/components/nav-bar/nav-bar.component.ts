@@ -7,7 +7,7 @@ export default class NavBar extends ComponentClass implements Component {
 	storeProperty: string = "";
 	selector: string;
 
-	constructor(selector: string = "nav-bar") {
+	constructor(selector: string) {
 		super(selector);
 		this.initializeChildren();
 	}

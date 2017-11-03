@@ -1,4 +1,4 @@
-import Store from "../store.ts";
+import Store from "../store";
 
 class ComponentClass {
 	

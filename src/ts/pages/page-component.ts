@@ -1,4 +1,4 @@
-import Store from "../store.ts";
+import Store from "../store";
 import {subscribe} from "redux-subscriber";
 
 export default class PageComponent {

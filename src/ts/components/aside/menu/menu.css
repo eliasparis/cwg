@@ -1,7 +1,55 @@
-aside menu #menu-nav {
+aside menu #menu-nav-bar {
     display: block;
 }
 
-aside #menu svg .cross-line {
-    display: none;
+aside #menu svg{
+    fill: #111835!important;
 }
+
+aside #menu .menu-action div{
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+aside #menu .menu-action .cross-line {
+    -webkit-transform: translateX(-50px);
+    -moz-transform: translateX(-50px);
+    -ms-transform: translateX(-50px);
+    transform: translateX(-50px); 
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+aside #menu .menu-action .nav-line{
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    transform: translateX(0px);
+}
+
+.menu-open aside #menu .nav-line{
+    -webkit-transform: translateX(-50px);
+    -moz-transform: translateX(-50px);
+    -ms-transform: translateX(-50px);
+    transform: translateX(-50px);
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.menu-open aside #menu .cross-line{
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    transform: translateX(0px);
+}
+
+aside #menu #menu-nav-bar{
+    display: none;
+}    

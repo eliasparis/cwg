@@ -4,7 +4,7 @@ let styles = require('./../css/main.css');
 ////////////////////////
 
 declare const CWGpages : string[];
-import Store from './store.ts';
+import Store from './store';
 import PageComponent from './pages/page-component';
 import NavBar from './components/nav-bar/nav-bar.component';
 import ErrorPage from './components/error-page/error-page.component';
@@ -27,7 +27,7 @@ new class App {
 	}
 
 	components() : void{
-		new NavBar();
+		new NavBar('nav-bar');
 		new Carousel();
 		new Aside();
 	}

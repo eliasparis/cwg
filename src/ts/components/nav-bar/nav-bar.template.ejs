@@ -1,9 +1,7 @@
-<div id="nav-bar">
-	<ul>
-		<% pages.forEach(function(page){ %>
-				<li>
-					<%- include('nav-bar-link/nav-bar-link.template.ejs', {page: page}); %>
-				</li>
-		<% }) %>
-	</ul>
-</div>
+<ul>
+	<% pages.forEach(function(page){ %>
+		<li>
+			<%- include('nav-bar-link/nav-bar-link.template.ejs', {page: page}); %>
+		</li>
+	<% }) %>
+</ul>
