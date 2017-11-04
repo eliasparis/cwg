@@ -3,6 +3,7 @@
 	margin: 0;
 	padding: 0;
 	vertical-align: top;
+	font-family: Verdana, Geneva, sans-serif;
 }
 
 html, body{
@@ -32,4 +33,13 @@ section{
 
 .hidden{
 	display: none!important;
+}
+
+ul{
+	list-style-type: none;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
 }

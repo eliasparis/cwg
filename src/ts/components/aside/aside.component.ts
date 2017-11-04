@@ -8,7 +8,7 @@ export default class Aside extends ComponentClass implements Component {
 	storeProperty: string = "";
 	selector: string;
 
-	constructor(selector: string = "aside") {
+	constructor(selector: string = "#aside") {
 		super(selector);
 		this.initializeChildren();
 	}

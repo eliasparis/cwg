@@ -2,12 +2,12 @@ import Store from "../store";
 
 class ComponentClass {
 	
-	element: HTMLElement;
-	children: Component[] = [];
+	element: Element;
+	children: any[] = [];
 	initialStoreValue: any = Store.getState(); 
 
 	constructor(selector: string){
-		this.element = document.getElementById(selector);
+		this.element = document.querySelector(selector);
 	}
 
 	render(template: string) : void {

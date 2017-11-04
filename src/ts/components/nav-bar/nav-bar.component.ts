@@ -1,11 +1,12 @@
-import {Component, ComponentClass} from "../component.ts";
-import NavBarLink from "./nav-bar-link/nav-bar-link.component.ts";
+import {Component, ComponentClass} from "../component";
+import NavBarLink from "./nav-bar-link/nav-bar-link.component";
 
 export default class NavBar extends ComponentClass implements Component {
 	
 	renderable: boolean = false;
 	storeProperty: string = "";
 	selector: string;
+	children: NavBarLink[];
 
 	constructor(selector: string) {
 		super(selector);
@@ -15,7 +16,7 @@ export default class NavBar extends ComponentClass implements Component {
 	initializeChildren() {
 		this.children = 
 			Array
-				.from(document.querySelectorAll('nav #nav-bar a'))
-				.map((element : HTMLElement) => new NavBarLink(element.id));
+				.from(document.querySelectorAll(`#${this.element.id} a`))
+				.map((element : HTMLElement) => new NavBarLink(`#${this.element.id} #${element.id}`));
 	}
 }

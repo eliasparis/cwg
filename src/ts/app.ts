@@ -27,7 +27,7 @@ new class App {
 	}
 
 	components() : void{
-		new NavBar('nav-bar');
+		new NavBar('#nav-bar');
 		new Carousel();
 		new Aside();
 	}

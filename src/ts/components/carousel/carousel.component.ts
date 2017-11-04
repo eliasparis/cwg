@@ -7,7 +7,7 @@ export default class Carousel extends ComponentClass implements Component {
 	storeProperty: string = "pages.currentPageHash";
 	selector: string;
 
-	constructor(selector: string = "carousel") {
+	constructor(selector: string = "#carousel") {
 		super(selector);
 		this.initializeChildren();
 	}
@@ -16,6 +16,6 @@ export default class Carousel extends ComponentClass implements Component {
 		this.children = 
 			Array
 				.from(document.querySelectorAll('#carousel .carousel-slide'))
-				.map((element : HTMLElement) => new CarouselSlide(element.id));
+				.map((element : HTMLElement) => new CarouselSlide(`#${element.id}`));
 	}
 }

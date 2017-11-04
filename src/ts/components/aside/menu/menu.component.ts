@@ -7,7 +7,7 @@ export default class Menu extends ComponentClass implements Component {
 	storeProperty: string = "";
 	selector: string;
 
-	constructor(selector: string = "menu") {
+	constructor(selector: string = "#menu") {
 		super(selector);
 		this.initializeChildren();
 		this.eventBinding();
@@ -15,7 +15,7 @@ export default class Menu extends ComponentClass implements Component {
 
 	initializeChildren(){
 		this.children.push(
-			new NavBar('menu-nav-bar')
+			new NavBar('#menu-nav-bar')
 		)
 	}
 

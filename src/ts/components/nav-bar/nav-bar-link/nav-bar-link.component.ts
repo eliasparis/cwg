@@ -1,5 +1,5 @@
-import {Component, ComponentClass} from "../../component.ts";
-import Store from "../../../store.ts";
+import {Component, ComponentClass} from "../../component";
+import Store from "../../../store";
 import {subscribe} from "redux-subscriber";
 
 export default class NavBarLink extends ComponentClass implements Component {

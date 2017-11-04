@@ -7,7 +7,7 @@ export default class ErrorPage extends ComponentClass implements Component {
 	storeProperty: string = "pages.errorHash";
 	selector: string;
 
-	constructor(selector: string = "error-page") {
+	constructor(selector: string = "#error-page") {
 		super(selector);
 		this.toggleErrorPage(this.initialStoreValue.pages.errorHash);
 		this.listeners();

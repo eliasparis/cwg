@@ -1,1 +1,21 @@
 @import "nav-bar-link/nav-bar-link.css";
+
+#menu-nav-bar ul{
+    position: absolute;
+    color: #e6e6e6;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#menu-nav-bar ul li{
+    margin: 1.5em;
+    padding: 0.6em;
+    letter-spacing: 0.4em;
+    font-size: 0.78em;
+}
