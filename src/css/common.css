@@ -3,7 +3,7 @@
 	margin: 0;
 	padding: 0;
 	vertical-align: top;
-	font-family: Verdana, Geneva, sans-serif;
+	font-family: Lato, Verdana, Geneva, sans-serif;
 }
 
 html, body{
@@ -42,4 +42,44 @@ ul{
 a{
 	text-decoration: none;
 	color: inherit;
+}
+
+h1{
+	font-size: 2em;
+	letter-spacing: 2px;
+	font-weight: 100;
+	line-height: 1.5em;
+	border-bottom: 1px solid #DCDBDB;
+	padding-bottom: 0.8em;
+	margin-bottom: 0.8em;
+	color: #111835;
+}
+
+h1 > span{
+	font-weight: 600;
+}
+
+h3{
+	font-weight: 100;
+	font-size: 0.8em;
+	display: inline-block;
+	padding: 6px 18px;
+	color: #fff;
+	background-color: #111835;
+	margin-bottom: 1.5em; 
+}
+
+p{
+	font-size: 0.85em;
+	line-height: 2em;
+}
+
+body.gl .gl,
+body.es .es{
+	display: inline-block;
+}
+
+body.es .gl,
+body.gl .es{
+	display: none;
 }

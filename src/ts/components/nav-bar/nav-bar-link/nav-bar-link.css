@@ -1,3 +1,13 @@
+@media (orientation : landscape)  {
+	nav#nav-bar{
+		display: block;
+	}
+}
+
 nav a.active{
-	color: red;
+	color: #2f51d4;
+}
+
+nav#nav-bar{
+	display: none;
 }

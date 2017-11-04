@@ -16,6 +16,7 @@ export default class NavBarLink extends ComponentClass implements Component {
 
 	toggleElement(hash : string){
 		if (this.element.id === `nav-bar-link-${hash}` ){
+			window.scrollTo(0,0);
 			this.element.classList.add('active');
 		}else{
 			this.element.classList.remove('active');
