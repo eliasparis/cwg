@@ -5,6 +5,7 @@ let styles = require('./../css/main.css');
 
 declare const CWGpages : string[];
 import Store from './store';
+import {subscribe} from "redux-subscriber";
 import PageComponent from './pages/page-component';
 import NavBar from './components/nav-bar/nav-bar.component';
 import ErrorPage from './components/error-page/error-page.component';
@@ -46,6 +47,11 @@ new class App {
 
 			Store.dispatch( changeHash( hash ) );
 		};
+
+		subscribe('lang.currentLang', (state: any) => {
+			document.body.classList.toggle('es');
+			document.body.classList.toggle('gl');
+		});
 
 		if(document.location.hash === ''){ 
 			document.location.hash = '#intro';

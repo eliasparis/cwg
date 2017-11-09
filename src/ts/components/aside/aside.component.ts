@@ -1,5 +1,6 @@
 import {Component, ComponentClass} from "../component.ts";
 import Menu from "./menu/menu.component";
+import LangSelector from "./lang-selector/lang.component";
 
 
 export default class Aside extends ComponentClass implements Component {
@@ -15,7 +16,8 @@ export default class Aside extends ComponentClass implements Component {
 
 	initializeChildren() {
 		this.children = [
-			new Menu()
+			new Menu(),
+			new LangSelector()
 		]
 	}
 }

@@ -1,0 +1,40 @@
+#lang-selector{
+    min-height: 24px;
+    position: absolute;
+    bottom: 10px;;
+    width: 100%;
+    transition: all 0.2s ease-in;
+}
+
+#lang-selector.expanded{
+    background-color: black;
+    width: 4.5em;
+}
+
+#lang-selector.expanded > span{
+    color: white;
+}
+
+#lang-selector > span{
+    color: #111835;
+    text-align: center;
+    vertical-align: middle;
+    padding-bottom: 4px;
+    padding-top: 1px;
+    display: inline-block!important;
+    min-width: 2.1em; 
+    position: absolute;
+}
+
+#lang-selector > span:not(.active){
+    opacity: 0;
+    visibility: hidden;
+}
+
+#lang-selector.expanded > span:not(.active){
+    opacity: 1;
+    visibility: visible;
+    display: block;
+    color: rgb(121, 129, 142);
+    left: 2.2em;
+}
