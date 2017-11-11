@@ -1,5 +1,9 @@
 @import "nav-bar-link/nav-bar-link.css";
 
+nav#nav-bar{
+	display: none;
+}
+
 #menu-nav-bar ul{
     position: absolute;
     color: #e6e6e6;
@@ -18,4 +22,13 @@
     padding: 0.6em;
     letter-spacing: 0.4em;
     font-size: 0.78em;
+}
+
+@media (orientation : landscape)  {
+    nav#nav-bar{
+        display: block;
+        position: fixed;
+        top: 2.5em;
+        right: 2.5em;
+    }
 }

@@ -1,0 +1,22 @@
+#main-content #logo-svg{
+    display: none;
+    position: absolute;
+    top: 0;
+    height: 15vh;
+    max-height: 15vh;
+    padding: 2.75vh 0;
+} 
+
+#main-content #logo-svg .st1{
+    fill: #fff;
+}
+
+#main-content #logo-svg .st0{
+    fill: #111835;
+}
+
+@media (orientation : landscape)  {
+    #main-content #logo-svg{
+        display: block;
+    }
+}

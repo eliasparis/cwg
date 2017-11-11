@@ -1,13 +1,17 @@
-@media (orientation : landscape)  {
-	nav#nav-bar{
-		display: block;
-	}
+nav li{
+	display: inline;
+	font-size: 0.70em;
+	padding: 5px 12px;
+	color: #2f51d4;
+	font-weight: 600;
+}
+
+nav li a:after{
+	content: '';
+
 }
 
 nav a.active{
-	color: #2f51d4;
-}
-
-nav#nav-bar{
-	display: none;
+	color: #111385;
+	display: inline!important;
 }

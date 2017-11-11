@@ -1,3 +1,7 @@
+.menu-open #carousel #logo-svg{
+  display: none;
+}
+
 #carousel #logo-svg{
   position: absolute;
   z-index: 10;
@@ -53,4 +57,16 @@
 
 .carousel-slide.loaded:before{
 	opacity: 0;
+}
+
+@media (orientation: portrait) and (min-width: 40em){
+  #carousel{
+    min-height: 25em;
+  }
+}
+
+@media (orientation: landscape){
+  #carousel #logo-svg{
+    display: none;
+  }
 }
