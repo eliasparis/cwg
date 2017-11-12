@@ -26,3 +26,76 @@ aside #facebook{
 		//display: grid;
 	}	
 }
+
+@media (orientation : landscape)  {
+    aside #facebook{
+		width: 40px;
+		left: 10px;
+		-webkit-transform: translate(0,-50%);
+		-moz-transform: translate(0,-50%);
+		-ms-transform: translate(0,-50%);
+		-o-transform: translate(0,-50%);
+		transform: translate(0,-50%);
+	}
+
+	aside #facebook::before{
+		content: '';
+		content: '';
+		position: absolute;
+		background-color: black;
+		width: 10px;
+		height: 10px;
+		left: 100%;
+		z-index: 10;
+		top: 50%;
+		margin-left: -5px;
+		margin-top: -5px;
+		transform: rotate(45deg);
+		animation: facelogo 10s infinite;
+	}
+
+	aside #facebook::after{
+		background-color: black;
+		color: white;
+		position: absolute;
+		top: 0;
+		left: 100%;
+		width: 160px;
+		font-size: 0.65em;
+		padding: 9px 15px;
+		animation: facelogo 10s infinite;
+	}
+
+	@-webkit-keyframes facelogo {
+		0%   { background-color: black; }
+		20%  { background-color: #2f51d4; }
+		60%  { background-color: #111835; }
+		80% { background-color: #f9108f; }
+	}
+	@-moz-keyframes facelogo {
+		0%   { background-color: black; }
+		20%  { background-color: #2f51d4; }
+		60%  { background-color: #111835; }
+		80% { background-color: #f9108f; }
+	}
+	@-o-keyframes facelogo {
+		0%   { background-color: black; }
+		20%  { background-color: #2f51d4; }
+		60%  { background-color: #111835; }
+		80% { background-color: #f9108f; }
+	}
+	@keyframes facelogo {
+		0%   { background-color: black; }
+		20%  { background-color: #2f51d4; }
+		60%  { background-color: #111835; }
+		80% { background-color: #f9108f; }
+	}
+
+	.gl aside #facebook::after{
+		content: 'Segue a nosa páxina para non perder ningunha nova';
+	}
+
+	.es aside #facebook::after{
+		content: 'Sigue nuestra página para no perderte ninguna noticia';
+	}
+}

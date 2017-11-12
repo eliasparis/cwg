@@ -1,3 +1,7 @@
+nav a.active{
+	color: #2f51d4;
+}
+
 #main-content nav li{
 	display: inline;
 	font-size: 0.70em;

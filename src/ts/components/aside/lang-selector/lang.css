@@ -40,3 +40,13 @@
     color: rgb(121, 129, 142);
     left: 50%;
 }
+
+@media (orientation : landscape)  {
+    #lang-selector{
+        width: 26px;
+        right: 25px;
+        top: 50%;
+        margin-top: -9px;
+        height: 24px;
+    }
+}
