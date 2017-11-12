@@ -1,4 +1,4 @@
-nav li{
+#main-content nav li{
 	display: inline;
 	font-size: 0.70em;
 	padding: 5px 12px;
@@ -6,12 +6,7 @@ nav li{
 	font-weight: 600;
 }
 
-nav li a:after{
-	content: '';
-
-}
-
-nav a.active{
+#main-content  nav a.active{
 	color: #111385;
 	display: inline!important;
 }
