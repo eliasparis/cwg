@@ -21,13 +21,13 @@ export default class LangSelector extends ComponentClass implements Component {
     }
 
     eventBinding(){
-        // this.element.addEventListener('mouseover', (ev) => {
-        //     this.element.classList.add('expanded');
-        // });
+        this.element.addEventListener('mouseover', (ev) => {
+            this.element.classList.add('expanded');
+        });
 
-        // this.element.addEventListener('mouseout', (ev) => {
-        //     this.element.classList.remove('expanded');
-        // });
+        this.element.addEventListener('mouseout', (ev) => {
+            this.element.classList.remove('expanded');
+        });
 
         // this.element.addEventListener('touchend', (ev: any) => {
         //     this.selectorActivation(ev);
