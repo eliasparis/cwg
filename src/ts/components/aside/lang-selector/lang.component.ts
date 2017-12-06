@@ -51,7 +51,7 @@ export default class LangSelector extends ComponentClass implements Component {
                 switchLang(targetName.includes('es') ? 'es' : 'gl')
             );
         };
-        this.element.classList.toggle('expanded');
+        this.element.classList.toggle('expanded', targetName.includes('active'));
     }
 
     private toggleLang(){

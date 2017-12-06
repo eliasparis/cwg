@@ -1,4 +1,4 @@
-import {Component, ComponentClass} from "../../component.ts";
+import {Component, ComponentClass} from "../../component";
 import {subscribe} from "redux-subscriber";
 
 export default class CarouselSlide extends ComponentClass implements Component {
@@ -7,7 +7,12 @@ export default class CarouselSlide extends ComponentClass implements Component {
 	storeProperty: string = "pages.currentPageHash";
 	storePropertyError : string = "pages.errorHash";
 	selector: string;
-	loaded: boolean = false;
+	hash: string;
+	element: HTMLElement;
+	private loaded: boolean = false;
+	private img: HTMLImageElement = new Image();
+	readonly imgIds: string[] = ['1x', '2x', '3x', '4x'];
+	readonly imgSizes: string[] = ['400w', '750w', '1300w', '1900w'];
 
 	constructor(selector: string) {
 		super(selector);
@@ -23,16 +28,12 @@ export default class CarouselSlide extends ComponentClass implements Component {
 			return false;
 		}
 
-		if (!this.loaded) {
+		if (!this.loaded && this.element.id === `c-slide-${hash}`) {
+			this.hash = hash;
 			this.lazyLoadPicture();
 		}
 
-		if (this.element.id === `c-slide-${hash}` ){
-			this.element.classList.add('active');
-			return false;
-		}
-		
-		this.element.classList.remove('active');
+		this.element.classList.toggle('current', this.element.id === `c-slide-${hash}`);
 	}
 
 	addEvents(){
@@ -41,12 +42,20 @@ export default class CarouselSlide extends ComponentClass implements Component {
 				state.pages.currentPageHash,
 				state.pages.errorHash
 			);
-		})
+		});
+
+		this.img.addEventListener('load', () =>{
+			this.element.style.backgroundImage = `url(${this.img.currentSrc})` ;
+			this.element.classList.add('loaded');
+			this.loaded = true;
+		});
 	}
 
 	lazyLoadPicture(){
-		//code
-		//this.element.classList.add('loaded');
-		this.loaded = true;
+		this.img.srcset = this.getSrcset;
+	}
+
+	get getSrcset(): string{
+		return this.imgSizes.reduce((prev, now, i) => prev + `tmp/images/slides/slide-${this.hash}-${this.imgIds[i]}.png ${now}, `, '');
 	}
 }

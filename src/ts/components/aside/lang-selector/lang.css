@@ -9,6 +9,7 @@
     -o-transition: all 0.2s ease-in ; 
     transition: all 0.2s ease-in ; 
     cursor: pointer;
+    z-index: 5;
 }
 
 #lang-selector.expanded{
