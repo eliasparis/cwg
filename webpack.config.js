@@ -50,7 +50,13 @@ module.exports = function(env){
     devServer: {
       hot: true, 
       contentBase: path.resolve(__dirname, 'dist'),
-      publicPath: '/tmp/'
+      publicPath: '/tmp/',
+      proxy:{
+        '/scripts' : {
+          target: "http://[::1]:8000",
+          pathRewrite: {"^/scripts" : ""}
+        }
+      }
     },
     devtool: isDev ? 'inline-source-map' : 'cheap-module-source-map'
   }
