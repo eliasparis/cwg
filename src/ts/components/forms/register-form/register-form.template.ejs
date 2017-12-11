@@ -1,0 +1,33 @@
+<form id="enroll-form">
+    <input class="enrollform" type="text" name="nombre" placeholder="Nome e apelidos" required>
+    <input class="enrollform" type="number" name="tlf" placeholder="Teléfono" required>
+    <input class="enrollform" type="email" name="email" placeholder="Email" required>
+    <div class="event-type-form">
+        <h6>Modalidade: </h6>
+        <div>
+            <input type="radio" value="wave" id="waveradio" name="modal" checked>
+            <label for="waveradio">Wave</label>
+        </div>
+        <div>
+            <input type="radio" value="salom" id="slalomradio" name="modal">
+            <label for="slalomradio">Slalom</label>
+        </div>
+    </div>
+    <div class="event-type-form">
+        <input type="radio" value="todo el circuito" id="circuitoradio" name="grupo" checked>
+        <label for="circuitoradio">Circuito completo</label>
+    </div>
+    <div class="event-type-form">
+        <input type="radio" value="ferrol" id="ferrolradio" name="grupo">
+        <label for="ferrolradio">Ferrol</label>
+        <input type="radio" value="furnas" id="furnasradio" name="grupo">
+        <label for="furnasradio">O Castro / Furnas</label>
+        <input type="radio" value="a lanzada" id="lanzadaradio" name="grupo">
+        <label for="lanzadaradio">A Lanzada</label>
+        <input type="radio" value="secret" id="secret radio" name="grupo">
+        <label for="secret radio">Secret Spot</label>
+    </div>
+    <h6><input type="checkbox" required value="true" id=lopd name="lopd"><label for="lopd">Acepto os   <a href="lopd.html" target="_blank" style="text-decoration: underline;"> términos e condicións de uso</a></label></h6>
+    <button type="submit" id="form-button">ENVIAR</button>
+    <p id="formComments"></p>
+</form>

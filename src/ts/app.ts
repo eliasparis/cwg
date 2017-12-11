@@ -11,6 +11,7 @@ import NavBar from './components/nav-bar/nav-bar.component';
 import ErrorPage from './components/error-page/error-page.component';
 import Carousel from './components/carousel/carousel.component';
 import Aside from './components/aside/aside.component';
+import RegisterForm from './components/forms/register-form/register-form.component';
 import { changeHash, errorHash, validHash } from './actions/page-actions';
 
 
@@ -31,6 +32,7 @@ new class App {
 		new NavBar('#nav-bar');
 		new Carousel();
 		new Aside();
+		new RegisterForm();
 	}
 
 	mainListeners(){

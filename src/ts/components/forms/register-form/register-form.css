@@ -1,0 +1,84 @@
+#enroll-form{
+    margin: 2.5em 0em;    
+    font-size: 0.8em;
+}
+
+#enroll-form button{
+    text-align: center;
+    width: 100%;
+    border: 0;
+    border: 1px solid #2f469e;
+    border-radius: 0;
+    margin: 3.5em 0 0 0;
+    padding: 1em 0;
+    color: #2f469e;
+    cursor: pointer;
+    background-color: inherit;
+}
+
+input[type="radio"],
+input[type="checkbox"]{
+    vertical-align: middle;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"]{
+    border: none;
+    padding: 10px 0;
+    margin: 25px 0;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #2f469e;
+    background: none;
+}
+
+.event-type-form {
+    margin: 2em 0;
+}
+
+.event-type-form input:checked,
+.event-type-form input:checked+label{
+    font-weight: bold;
+    cursor: default;
+}
+
+.event-type-form input{
+    cursor: pointer;
+}
+
+.event-type-form label {
+    padding-left: 10px;
+    vertical-align: middle;
+    color: #2f469e;
+    cursor: pointer;
+}
+
+.event-type-form label:hover,
+.event-type-form label:focus {
+    color: lightgray;
+}
+
+.event-type-form > h6{
+    margin: 3em 0 1.5em 0;
+}
+
+.event-type-form > div{
+    padding: 0.5em 0.5em 0.5em 1em;
+    width: 49%;
+    display: inline-block;
+}
+
+@media (orientation : landscape)  {
+    #enroll-form{
+        margin: 3.5em 0em; 
+        border: 1px solid #DCDBDB;
+        background-color: #fff;
+        padding: 2.5em;
+        padding-top: 0;
+    }
+
+    .event-type-form > div{
+        width: 33%;
+    }
+}
