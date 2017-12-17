@@ -30,10 +30,14 @@ module.exports = function(env){
           })
     		},
     		{
-         test: /\.ts?$/,
-         use: 'ts-loader',
-         exclude: /node_modules/
-       }
+          test: /\.ts?$/,
+          use: 'ts-loader',
+          exclude: /node_modules/
+        },
+        {
+          test: /\.(ejs)$/,
+          use: 'ejs-compiled-loader'
+        }
     	]
     },
     plugins: 

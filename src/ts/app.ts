@@ -1,9 +1,4 @@
-////// Styles import fix
-declare var require: any;
-let styles = require('./../css/main.css');
-////////////////////////
-
-declare const CWGpages : string[];
+var styles = require('./../css/main.css');
 import Store from './store';
 import {subscribe} from "redux-subscriber";
 import PageComponent from './pages/page-component';

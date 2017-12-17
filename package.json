@@ -13,9 +13,11 @@
   "author": "eliasparis",
   "license": "MIT",
   "devDependencies": {
+    "@types/ejs": "^2.5.0",
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.5.2",
     "css-loader": "^0.28.4",
+    "ejs-compiled-loader": "^1.1.0",
     "extract-text-webpack-plugin": "^2.1.2",
     "style-loader": "^0.18.2",
     "ts-loader": "^2.2.2",

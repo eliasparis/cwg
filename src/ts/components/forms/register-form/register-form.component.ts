@@ -1,13 +1,13 @@
 import {Component, ComponentClass} from "../../component";
-import ejs from "ejs";
+import * as templateString from "./register-form.template.ejs";
 
 export default class RegisterForm extends ComponentClass implements Component {
-    
     
 	renderable: boolean = true;
 	storeProperty: string = "";
     selector: string;
     element: HTMLFormElement;
+    template: any = templateString;
 
 	constructor(selector: string = "#enroll-form") {
         super(selector);
