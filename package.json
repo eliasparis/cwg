@@ -6,9 +6,10 @@
   "scripts": {
     "test": "",
     "prebuild": "babel-node builder_scripts/prebuild",
+    "copyscripts": "cp -a ./src/scripts/. ./dist/scripts",
     "phpserver": "php -S localhost:8000 -t src/scripts",
-    "start": "npm run prebuild --dev | webpack-dev-server --env development & npm run phpserver",
-    "build": "npm run prebuild --pro && webpack --env production --progress --colors"
+    "start": "npm run prebuild --dev | webpack-dev-server --env development & npm run phpserver",    
+    "build": "npm run prebuild --pro && webpack --env production --progress --colors && npm run copyscripts"
   },
   "author": "eliasparis",
   "license": "MIT",
@@ -18,7 +19,9 @@
     "babel-preset-env": "^1.5.2",
     "css-loader": "^0.28.4",
     "ejs-compiled-loader": "^1.1.0",
+    "exports-loader": "^0.6.4",
     "extract-text-webpack-plugin": "^2.1.2",
+    "imports-loader": "^0.7.1",
     "style-loader": "^0.18.2",
     "ts-loader": "^2.2.2",
     "typescript": "^2.4.1",
@@ -27,8 +30,12 @@
   },
   "dependencies": {
     "ejs": "^2.5.6",
+    "es6-promise": "^4.2.4",
+    "formdata-polyfill": "^3.0.9",
     "object-path": "^0.11.4",
     "redux": "^3.7.1",
-    "redux-subscriber": "^1.1.0"
+    "redux-subscriber": "^1.1.0",
+    "redux-thunk": "^2.2.0",
+    "whatwg-fetch": "^2.0.3"
   }
 }

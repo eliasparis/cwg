@@ -56,6 +56,6 @@ export default class CarouselSlide extends ComponentClass implements Component {
 	}
 
 	get getSrcset(): string{
-		return this.imgSizes.reduce((prev, now, i) => prev + `tmp/images/slides/slide-${this.hash}-${this.imgIds[i]}.png ${now}, `, '');
+		return this.imgSizes.reduce((prev, now, i) => prev + `public/images/slides/slide-${this.hash}-${this.imgIds[i]}.png ${now}, `, '');
 	}
 }

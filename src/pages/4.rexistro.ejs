@@ -5,5 +5,7 @@
     <h3 class="es">INSCRÍBETE</h3>
     <p class="es"> Las preinscripciones se pueden hacer hasta el Viernes antes de cada prueba, o previamente para todo el circuito teniendo prioridad en caso de llegar a cubrir el cupo maximo de participantes de cada prueba.
         <br>La inscripción por cada modalidad son de <b>20€ No federados y 15€ federados.</b> El precio para la inscripción al circuito completo es de <b>40€ No federados y 30€ federados</b> por cada modalidad.</p>
-    <%- include('./../ts/components/forms/register-form/register-form.template.ejs'); %>
+        <form id="enroll-form"> 
+    <%- include('./../ts/components/forms/register-form/register-form.template.ejs', {loading: true, data:[], error: false}); %>
+        </form>
 </section>

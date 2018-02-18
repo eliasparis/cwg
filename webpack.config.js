@@ -8,11 +8,14 @@ module.exports = function(env){
   const isDev = env === "development";
 
   return {
-    entry: './src/ts/app.ts',
+    entry: {
+      app: './src/ts/app.ts',
+      cms: './src/ts/cms.ts'
+    },
     output: {
-      filename: 'bundle.js',
-      path: path.resolve(__dirname, 'dist/tmp/'),
-      publicPath: './tmp/'
+      filename: '[name]-bundle.js',
+      path: path.resolve(__dirname, 'dist/public/'),
+      publicPath: './dist/'
     },
     resolve: {
       extensions: [".ts", ".tsx", ".js"]
@@ -26,7 +29,7 @@ module.exports = function(env){
     				'css-loader'
     			] : ExtractTextPlugin.extract({
             fallback: "style-loader",
-            use: "css-loader"
+            use: "css-loader" 
           })
     		},
     		{
@@ -42,10 +45,18 @@ module.exports = function(env){
     },
     plugins: 
       isDev ? [
-      	new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.ProvidePlugin({
+          Promise: 'imports-loader?this=>global!exports-loader?global.Promise!es6-promise',
+          fetch: 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
+        })
       ] : [
         new webpack.DefinePlugin({
-          'process.env.NODE_ENV': env
+          'process.env.NODE_ENV': JSON.stringify(env)
+        }),
+        new webpack.ProvidePlugin({
+          Promise: 'imports-loader?this=>global!exports-loader?global.Promise!es6-promise',
+          fetch: 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
         }),
         new webpack.optimize.UglifyJsPlugin(),
         new ExtractTextPlugin('../css/[name].css'),
@@ -54,7 +65,7 @@ module.exports = function(env){
     devServer: {
       hot: true, 
       contentBase: path.resolve(__dirname, 'dist'),
-      publicPath: '/tmp/',
+      publicPath: '/public/',
       proxy:{
         '/scripts' : {
           target: "http://[::1]:8000",

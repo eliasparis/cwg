@@ -4,13 +4,27 @@
     <meta charset="UTF-8">
     <title>CWG | Circuito de Windsurf Galego</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Sitio oficial do CWG, Circuito de Windsurf Galego 2017." />
+    <meta name="description" content="Sitio oficial do CWG, Circuito de Windsurf Galego 2018." />
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/png" href="public/favicon/fav16x16.png" sizes="16x16">  
     <link rel="icon" type="image/png" href="public/favicon/fav32x32.png" sizes="32x32">  
     <link rel="icon" type="image/png" href="public/favicon/fav96x96.png" sizes="96x96"> 
     <link rel="canonical" href="http://www.cwgal.com">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script>
+        //Safari fix
+        var ua = navigator.userAgent.toLowerCase();
+		if (ua.indexOf('safari') != -1) {
+			if (ua.indexOf('chrome') > -1) {
+			} else {
+				HTMLElement.prototype.click = function () {
+				    var click_ev = document.createEvent("MouseEvent");
+				    click_ev.initEvent("click", true /* bubble */, true /* cancelable */);
+				    this.dispatchEvent(click_ev);
+				};
+			};
+        };
+    </script>
     <script>window.CWGpages = JSON.parse('<%- JSON.stringify(pages) %>');</script>
 </head>
 <body class="gl">
@@ -21,6 +35,9 @@
         <div id="carousel-container" class="calc-width-m">
             <%- include('ts/components/carousel/carousel.template.ejs'); %>
         </div>    
+        <div class="status-tag desktop">
+            <%- include('ts/components/aside/status-tag/status-tag.template.ejs'); %>
+        </div>
     </div><div id="main-content" class="calc-width-m">
         <nav id="nav-bar">
             <%- include('ts/components/nav-bar/nav-bar.template.ejs'); %>
@@ -30,6 +47,6 @@
         <!-- END Content includes reference -->
         <%- include('ts/components/error-page/error-page.template.ejs'); %>
     </div>
-	<script src="tmp/bundle.js">//SCRIPT</script>
+	<script src="public/app-bundle.js">//SCRIPT</script>
 </body>
 </html>

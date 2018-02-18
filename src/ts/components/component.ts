@@ -12,7 +12,7 @@ class ComponentClass {
 	}
 
 	render(data: any) : void {
-		console.warn(this.template);
+		this.element.innerHTML = this.template(data);
 	}
 }
 

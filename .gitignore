@@ -5,3 +5,5 @@ node_modules/
 build/
 dist/
 npm-debug.log
+db/
+src/scripts/pwww.php

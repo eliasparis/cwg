@@ -1,4 +1,4 @@
-@media (orientation : landscape)  {
+@media (orientation : landscape) and (min-width: 550px) {
 
 	/** When css-grid is suported **/
 	@supports (display: -webkit-grid) or

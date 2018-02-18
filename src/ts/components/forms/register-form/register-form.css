@@ -3,6 +3,15 @@
     font-size: 0.8em;
 }
 
+#enroll-form p.info{
+    margin-top: 3em;
+    font-weight: 600;
+}
+
+#enroll-form p.info.error{
+    color: #c31515;
+}
+
 #enroll-form button{
     text-align: center;
     width: 100%;
@@ -14,6 +23,32 @@
     color: #2f469e;
     cursor: pointer;
     background-color: inherit;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+#enroll-form button.error{
+    background-color: #ff445d;
+    color: white;
+    border: 1px solid #47f9ff;
+    cursor: none;
+}
+
+#enroll-form button.sending{
+    background-color: black;
+    color: white;
+    border: 1px solid #2f469e;
+    cursor: none;
+}
+
+#enroll-form button.sent{
+    background-color: #84eab7!important;
+    color: #460729!important;
+    border: 0!important;
+    cursor: inherit;
 }
 
 input[type="radio"],
@@ -69,7 +104,7 @@ input[type="number"]{
     display: inline-block;
 }
 
-@media (orientation : landscape)  {
+@media (orientation : landscape) and (min-width: 550px){
     #enroll-form{
         margin: 3.5em 0em; 
         border: 1px solid #DCDBDB;

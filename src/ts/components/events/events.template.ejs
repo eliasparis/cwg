@@ -1,0 +1,17 @@
+<% if(error && !data.length){ %>
+    <p class="error gl">Un erro aconteceu. Visítenos de novo noutra ocasión.</p>
+    <p class="error es">Ocurrió un error. Visítanos de nuevo en otro momento.</p>
+<% }else{ %>
+    <div class="events-grid">
+        <% data.forEach(function(event){ %>
+            <div id="<%= event.place.replace(' ', '') %>" class="alert-<%= event.alert %>">
+                <div class="info">
+                    <p class="name"><%= event.name %></p>
+                    <p class="place"><%= event.place %></p>
+                    <p class="mode <%= event.group.toLowerCase() %>"><%= event.group %></p>
+                    <p class="when"><%= event.when %></p>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+<% } %>

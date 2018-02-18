@@ -76,7 +76,7 @@ aside #menu #menu-nav-bar{
     transition: all 0.15s ease-out;
 }
 
-@media (orientation : landscape)  {
+@media (orientation : landscape) and (min-width: 550px){
     aside menu{
         display: none;
     }

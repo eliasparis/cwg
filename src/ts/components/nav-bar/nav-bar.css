@@ -24,7 +24,7 @@ nav#nav-bar{
     font-size: 0.78em;
 }
 
-@media (orientation : landscape)  {
+@media (orientation : landscape) and (min-width: 550px){
     nav#nav-bar{
         display: block;
         position: fixed;

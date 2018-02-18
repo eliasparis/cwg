@@ -1,5 +1,6 @@
 @import "menu/menu.css";
 @import "lang-selector/lang.css";
+@import "status-tag/status-tag.css";
 
 aside#aside{
 	
@@ -7,7 +8,7 @@ aside#aside{
 
 aside #facebook{
   position: relative;
-  top: 50%;
+  bottom: -50%;
   left: 50%;
 	-webkit-transform: translate(-50%,-50%);
 	-moz-transform: translate(-50%,-50%);
@@ -27,7 +28,7 @@ aside #facebook{
 	}	
 }
 
-@media (orientation : landscape)  {
+@media (orientation : landscape) and (min-width: 550px){
     aside #facebook{
 		width: 40px;
 		left: 10px;

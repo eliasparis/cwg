@@ -1,0 +1,54 @@
+<style>
+    section .title{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+    #form-comments{
+        margin: 25px 0;
+        font-weight: 600;
+        font-family: monospace;
+    }
+    #form-comments.error{
+        color: rgb(202, 62, 85);
+    }
+</style>
+<% data.forEach(function(event){ %>
+    <section id="<%= event.name %>" style="border: 1px solid #ace26c; padding: 20px; margin-bottom: 20px">
+        <span class="title"><%= event.name %></span> 
+        <div class="reference">
+            Nome:<input type="text" data-key="name" value="<%= event.name %>">
+            Lugar: <input type="text" data-key="place" value="<%= event.place %>">
+            Modalidade: <select data-key="group">
+                <option value="Slalom" <% if(event.group === 'Slalom'){ %> selected <% } %> >Slalom</option>
+                <option value="Waves" <% if(event.group === 'Waves'){ %> selected <% } %> >Ondas</option>
+            </select>
+            Alerta: <input type="number" data-key="alert" value="<%= event.alert %>">
+            Data(DÍA/MES/AÑO): <input type="text" data-key="when" value="<%= event.when %>">
+            <!-- Color: <select data-key="color">
+                <%['#fff6e9', '#f8ffaf', '#8dffe0', '#fb56a0', '#eadcff', '#f57474', '#746be6', '#e82c79', '#031456', '#212225'].forEach(function(option){%>
+                    <option value="<%= option %>" <%if(option === event.color){%> selected <%}%> > <%= option %> </option>    
+                <%})%>
+            </select>     -->
+        </div>
+        <button type="button" class="delete">ELIMINAR EVENTO</button>
+    </section>
+<% }) %>
+    <h5 style="margin-top:45px">Engadir un novo evento</h5>
+    <section style="border: 1px solid #6cdee2; padding: 20px; margin-bottom: 20px">
+        <div class="reference">
+            Nome:<input type="text" data-key="name">
+            Lugar: <input type="text" data-key="place">
+            Modalidade: <select data-key="group" >
+                <option disabled selected value> -- select an option -- </option>
+                <option value="Slalom">Slalom</option>
+                <option value="Waves">Ondas</option>
+            </select>
+            Alerta: <input type="number" data-key="alert">
+            Data(DÍA/MES/AÑO)(obligatorio aunque no sea definitiva): <input type="text" data-key="when">
+        </div>
+    </section>
+    <div>
+        <div id="form-comments"></div>
+        <button type="submit">SALVAR OS CAMBIOS</button>
+    </div>

@@ -1,7 +1,7 @@
-import {Component, ComponentClass} from "../component.ts";
+import {Component, ComponentClass} from "../component";
 import Menu from "./menu/menu.component";
 import LangSelector from "./lang-selector/lang.component";
-
+import StatusTag from "./status-tag/status-tag.component";
 
 export default class Aside extends ComponentClass implements Component {
 	
@@ -17,7 +17,8 @@ export default class Aside extends ComponentClass implements Component {
 	initializeChildren() {
 		this.children = [
 			new Menu(),
-			new LangSelector()
+			new LangSelector(),
+			new StatusTag('.status-tag.mobile')
 		]
 	}
 }

@@ -10,3 +10,4 @@ declare module "*.css" {
 declare const CWGpages : string[];
 
 declare var require: any;
+

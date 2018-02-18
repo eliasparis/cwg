@@ -7,11 +7,11 @@ module.exports = class CustomPro{
 	apply(compiler){
 
 		compiler.plugin("after-emit", function(compilation, callback) {
-     	
+
      	const data = 
      		fs
 					.readFileSync(
-						compilation.assets[compiler.options.output.filename].existsAt, 
+						'./dist/public/app-bundle.js', 
 						{encoding: 'utf8'}
 					)
 					.toString()
@@ -21,7 +21,7 @@ module.exports = class CustomPro{
 					.readFileSync('./dist/index.html', {encoding: 'utf8'})
 					.toString()
 					.replace('//SCRIPT', data)
-					.replace('src="tmp/bundle.js"', '');
+					.replace('src="public/bundle.js"', '');
 
 			fs
 				.writeFileSync(

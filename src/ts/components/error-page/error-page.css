@@ -1,0 +1,29 @@
+#error-page {
+    text-align: center;
+    color: #ff0172;
+    font-size: 0.85em;
+}
+
+#error-page a{
+    text-align: center;
+    width: 300px;
+    border: 0;
+    border: 1px solid #DCDBDB;
+    border-radius: 0;
+    padding: 2.8em 0;
+    color: rgb(151, 142, 175);
+    cursor: pointer;
+    background-color: inherit;
+    display: block;
+    margin: 0 auto;
+    margin-top: 3em; 
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+#error-page a:hover{
+    border: 1px solid rgb(151, 142, 175);
+}

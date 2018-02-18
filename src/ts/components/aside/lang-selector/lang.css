@@ -1,7 +1,7 @@
 #lang-selector{
     min-height: 24px;
     position: absolute;
-    bottom: 10px;;
+    bottom: 3em;
     width: 100%;
     -webkit-transition: all 0.2s ease-in ; 
     -moz-transition: all 0.2s ease-in ; 
@@ -47,7 +47,7 @@
     left: 50%;
 }
 
-@media (orientation : landscape)  {
+@media (orientation : landscape)and (min-width: 550px){
     #lang-selector{
         width: 26px;
         right: 25px;

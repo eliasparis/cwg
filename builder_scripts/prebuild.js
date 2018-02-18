@@ -20,6 +20,8 @@ function builder(){
 			.readFileSync('./src/index.html', {encoding: 'utf8'})
 			.toString()
 			.replace('###', includes);
+	
+	const cms = fs.readFileSync('./src/cms.html', {encoding: 'utf8'});
 			
 	fs
 		.writeFileSync(
@@ -33,6 +35,8 @@ function builder(){
 					}
 				)
 		);
+
+	fs.writeFileSync('./dist/cms.html', cms);
 
 	process.emitWarning('Templates compiled');
 };
